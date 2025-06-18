@@ -13,12 +13,12 @@ DatabaseTest::DatabaseTest()
 
 void DatabaseTest::testExpectedRecords()
 {
-    qInfo() << "Testin expected number of records....";
+    qInfo() << "Testing expected number of records....";
 
     if(records.size() == 3)
         qInfo() << "User table contains expected number of records: 3!";
     else
-        QFAIL("Expected 3 racords but instead got " + records.size());
+        QFAIL("Expected 3 records but got " + records.size());
 }
 
 void DatabaseTest::testAddUniqueRecord_data()
@@ -40,7 +40,7 @@ void DatabaseTest::testAddUniqueRecord_data()
 
 void DatabaseTest::testAddUniqueRecord()
 {
-    qInfo() << "\n\n Testing new record insertion....";
+    qInfo() << "\n\n Testing unique record insertion....";
 
     QFETCH(QString, id);
     QFETCH(QString, companyId);
