@@ -60,13 +60,38 @@ void DatabaseTest::testAddUniqueRecord()
 
 }
 
+void DatabaseTest::testDeleteRecord_data()
+{
+    qInfo() << "\n\n Generating User test data for deletion....";
 
+    QTest::addColumn<QString>("id");
+    QTest::addColumn<QString>("companyId");
+    QTest::addColumn<QString>("email");
+    QTest::addColumn<QString>("company");
 
+    QTest::addRow("Record1") << "B1" << "500" << "500@fakeemail.com" << "department1";
+    QTest::addRow("Record2") << "B2" << "600" << "600@fakeemail.com" << "department1";
 
+    qInfo() << "User test data generated!";
+}
 
+void DatabaseTest::testDeleteRecord()
+{
+    qInfo() << "\n\n Testing record deletion....";
 
+    QFETCH(QString, id);
+    QFETCH(QString, companyId);
+    QFETCH(QString, email);
+    QFETCH(QString, company);
 
+    qInfo() << "Testing record " + id + " | " + companyId + " | " + email + " | " + company;
 
+    db->addRecord(QStringList({id,companyId,email,company}));
+    bool ok = db->deleteRecord("id", id);
 
-
-
+    if(!ok){
+        QFAIL("Record deletion failed!");
+    }
+    else
+        qInfo() << "Record deletion passed!";
+}

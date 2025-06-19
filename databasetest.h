@@ -18,6 +18,8 @@ private slots:
     void testExpectedRecords();
     void testAddUniqueRecord_data();
     void testAddUniqueRecord();
+    void testDeleteRecord_data();
+    void testDeleteRecord();
 };
 
 #endif // DATABASETEST_H
