@@ -30,9 +30,9 @@ void DatabaseTest::testAddUniqueRecord_data()
     QTest::addColumn<QString>("email");
     QTest::addColumn<QString>("department");
 
-    QTest::addRow("Fake record") << "A100" << "90" << "900@fakeemail.com" << "department1";
-    QTest::addRow("Real record") << "A200" << "200" << "200@fakeemail.com" << "department2";
-    QTest::addRow("Real record") << "A300" << "300" << "300@fakeemail.com" << "department3";
+    QTest::addRow("Record1") << "A100" << "90" << "900@fakeemail.com" << "department1";
+    QTest::addRow("Record2") << "A200" << "200" << "200@fakeemail.com" << "department2";
+    QTest::addRow("Record3") << "A300" << "300" << "300@fakeemail.com" << "department3";
 
     qInfo() << "User test data generated!";
 
